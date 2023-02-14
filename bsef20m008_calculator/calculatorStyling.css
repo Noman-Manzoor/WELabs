@@ -1,0 +1,26 @@
+.calculator{
+	border:2px solid #ddd;
+	width: 280px;
+	box-sizing: border-box;
+	margin: 40px auto 0;
+	font-family: verdana;
+}
+.form-control{
+	height: 60px;
+}
+ .form-group{
+	margin-bottom: 0;
+}
+ input[type=text]{
+	font-size: 1.5rem;
+	color:#333;
+}
+.btn_custom {
+	font-size: 1.5rem;
+	color:#333;
+	width: 80px;
+	border: 1px solid blue;
+}
+ .btn_custom-operator {
+	background-color: #89b8c2;
+}

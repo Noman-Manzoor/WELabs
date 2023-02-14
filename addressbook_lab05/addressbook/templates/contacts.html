@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <title>Contacts</title>
+</head>
+<body>
+    
+    
+    <div>
+        <ul>
+            <li> <a href="/view_all_contacts">View All Contacts</a> </li>
+            <li> <a href="/create_contact">Create Contact</a> </li>
+        </ul>
+    </div>
+
+    <div>
+        {% if msg %}
+            <h2 class="msg">{{msg}}</h>
+        {% endif %}
+    </div>
+    <div>
+        <form action="/" method="get">
+            {% if query %}
+                Search By Name: <input type="text" name="name" id="name" value="{{query}}">
+            {% else %}
+                Search By Name: <input type="text" name="name" id="name">
+            {% endif %}
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    {% if query %}
+    <h2>
+        Results: 
+    </h2>
+    {% endif %}
+    <div>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Mobile No.</th>
+                    <th>City</th>
+                    <th>Profession</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{contact.id}}</td>
+                        <td>{{contact.name}}</td>
+                        <td>{{contact.mobileno}}</td>
+                        <td>{{contact.city}}</td>
+                        <td>{{contact.profession}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
